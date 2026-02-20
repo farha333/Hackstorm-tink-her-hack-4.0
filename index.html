@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BloodHub - Save Lives Faster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🩸 BloodHub</h1>
+        <p>Connecting Donors. Saving Lives.</p>
+        <button onclick="scrollToSearch()">Find Blood Now</button>
+    </header>
+
+    <section class="features">
+        <h2>Why BloodHub?</h2>
+        <div class="feature-box">
+            <div>
+                <h3>⚡ Instant Search</h3>
+                <p>Find nearby blood donors in seconds.</p>
+            </div>
+            <div>
+                <h3>🚑 Emergency Mode</h3>
+                <p>Priority alert system for critical cases.</p>
+            </div>
+            <div>
+                <h3>🧠 Smart Risk Indicator</h3>
+                <p>Shows urgency level based on need.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="search-section">
+        <h2>Find a Donor</h2>
+
+        <select id="bloodGroup">
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>B+</option>
+            <option>O+</option>
+            <option>AB+</option>
+            <option>A-</option>
+            <option>B-</option>
+            <option>O-</option>
+            <option>AB-</option>
+        </select>
+
+        <input type="text" id="location" placeholder="Enter Location">
+
+        <select id="urgency">
+            <option value="Normal">Normal</option>
+            <option value="Critical">Critical</option>
+        </select>
+
+        <button onclick="searchDonor()">Search</button>
+
+        <div id="riskLevel"></div>
+        <div id="results"></div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ at Tink Her Hackathon</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>/3325
