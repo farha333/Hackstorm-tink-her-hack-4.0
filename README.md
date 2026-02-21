@@ -2,7 +2,7 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [Blood Hub] 🎯
 
 ## Basic Details
 
@@ -10,19 +10,25 @@
 
 ### Team Members
 - Member 1: [Naurin farha A] - [Royal College Of Engineering And Technology]
-- Member 2: [Rafeetha R.V*] - [Royal College Of Engineering And Technology]
+- Member 2: [Rafeetha R.V] - [Royal College Of Engineering And Technology]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Blood Hub is an emergency blood matching web application that connects donors and receivers quickly and efficiently. Users can register as donors, and receivers can instantly find matching blood groups based on location. The platform includes a Rare Blood Group Priority Network and emergency service options like ambulance and rapid bike support, ensuring faster response during critical situations and helping save lives]
 
 ### The Problem statement
-[What problem are you solving?]
+[During medical emergencies, finding the right blood donor quickly is a major challenge, especially for rare blood groups. Lack of a centralized, fast, and reliable system causes delays that can risk lives. There is a need for a smart digital platform that connects donors and receivers instantly and ensures rapid emergency response support.]
+
 
 ### The Solution
-[How are you solving it?]
+[We solve this problem by creating **Blood Hub**, a smart web-based platform that instantly connects donors and receivers. Donors can register with their blood group, location, and health details, while receivers can quickly search and find matching donors.
+
+The system includes a **Rare Blood Group Priority Network** for urgent cases and provides emergency support options like **ambulance and rapid bike services** to ensure faster response time.
+
+By combining real-time matching, priority alerts, and quick service options, Blood Hub helps reduce delays and save lives during critical situations.]
+
 
 ---
 
@@ -31,25 +37,33 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [html]
+- Frameworks used: [None]
+- Libraries used: [html,css]
+- Tools used: [ VS Code, Github]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [Laptop,Internet connection,Web Browser,Mobile Device]
+- Specifications: [Processor: Intel i3 or above
+
+RAM: Minimum 4GB
+
+Storage: 500MB free space
+
+Device: Laptop / Desktop / Mobile
+
+Internet Connection required]
+- Tools required: [Laptop,Internet connection,Mobile Device,4GB RAM]
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Smart blood matching based on blood group and city]
+- Feature 2: [Rare blood group priority network for urgent cases.]
+- Feature 3: [Emergency support with ambulance and rapid bike service.]
+- Feature 4: [Easy donor registration with live donor database.]
 
 ---
 
@@ -70,10 +84,14 @@ List the key features of your project:
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+[Laptop (Development System) – Used for coding and testing the website
+Internet Connection – For research and project submission
+Mobile Phone – To test responsive design and user interface
+4GB / 8GB RAM – For efficient development performance]
 
 #### Circuit Setup
-[Explain how to set up the circuit]
+[Push Button Switch
+Power Supply (5V)]
 
 ---
 
@@ -83,14 +101,31 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1919" height="833" alt="Screenshot 2026-02-21 054351" src="https://github.com/user-attachments/assets/a2b1691e-5c4a-47df-948f-5ebaafdb9d02" />
+](Add screenshot 1 here with proper name)
+*BLOOD HUB
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+The homepage of **BLOOD HUB – Smart Emergency Blood Matching System** is designed to provide quick and easy access to blood donation services during emergencies.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+The page features a bold red theme symbolizing urgency and healthcare. At the top, the project title and tagline clearly represent the purpose of the platform.
+
+### 🔹 Main Sections of the Page:
+
+* **Become Donor Button** – Allows users to register as blood donors by providing their details.
+* **I Am Receiver Button** – Enables patients or hospitals to request blood.
+* **Rare Blood Priority Network** – Special feature to prioritize rare blood group requests.
+* **Quick Search by City** – Users can enter a city name to find available donors in that location.
+* **Live Donor Statistics** – Displays the total number of registered donors to show platform activity.
+* **Quick Emergency Button** – Provides fast access during urgent situations.
+* **Dark Mode Toggle** – Allows users to switch between light and dark themes for better user experience.*
+
+![<img width="1904" height="794" alt="Screenshot 2026-02-21 055008" src="https://github.com/user-attachments/assets/959e80b4-6f24-456b-8afd-7f5459b39792" />
+](Add screenshot 2 here with proper name)
+*The Donor Registration page allows users to enter their personal details such as name, age, blood group, city, and health condition to register as a blood donor. This form ensures accurate donor information for quick and efficient emergency blood matching.*
+
+![<img width="1888" height="838" alt="Screenshot 2026-02-21 054940" src="https://github.com/user-attachments/assets/86900989-b880-4eeb-bfea-2ca5789843a8" />
+](Add screenshot 3 here with proper name)
+*The Smart Match Donor page allows users to select a required blood group and instantly find matching registered donors. The system displays donor details such as name, blood group, city, and age to ensure quick and efficient emergency blood support.8*
 
 #### Diagrams
 
@@ -118,7 +153,8 @@ List the key features of your project:
 
 #### Build Photos
 
-![Team](Add photo of your team here)
+![Hack storm](![WhatsApp Image 2026-02-21 at 6 36 13 AM](https://github.com/user-attachments/assets/3f348d76-c8a1-49e3-a1c2-ca2c0121ff4a)
+)
 
 ![Components](Add photo of your components here)
 *List out all components shown*
@@ -360,8 +396,8 @@ python script.py -v --format json data.json
 
 ## Project Demo
 
-### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+###* Video
+[]
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
