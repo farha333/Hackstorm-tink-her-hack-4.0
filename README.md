@@ -2,7 +2,7 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Blood Hub] 🎯
+# Blood Hub 🎯
 
 ## Basic Details
 
