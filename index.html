@@ -1,68 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>BloodHub - Save Lives Faster</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloodHub | Smart Emergency Network</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#7b0000,#ff4d4d);
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+/* PAGE CONTAINER */
+.page{
+display:none;
+padding:60px 20px;
+text-align:center;
+animation:fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* ROLE PAGE */
+#rolePage{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:18px;
+margin-bottom:30px;
+opacity:0.9;
+}
+
+.counter{
+margin-bottom:30px;
+font-size:20px;
+font-weight:bold;
+background:rgba(255,255,255,0.2);
+padding:10px 20px;
+border-radius:20px;
+}
+
+.role-buttons{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.role-btn{
+padding:20px 45px;
+border:none;
+border-radius:40px;
+font-size:20px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.donor-btn{
+background:black;
+color:white;
+}
+
+.receiver-btn{
+background:white;
+color:#7b0000;
+}
+
+.role-btn:hover{
+transform:scale(1.1);
+}
+
+/* FORM */
+input,select{
+padding:12px;
+margin:10px;
+width:250px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* CARD */
+.card{
+background:white;
+color:black;
+padding:15px;
+margin:15px auto;
+width:300px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.critical{
+background:#ffcccc;
+border:2px solid red;
+}
+
+.back-btn{
+background:yellow;
+color:black;
+margin-top:30px;
+}
+
+.success{
+color:lightgreen;
+font-weight:bold;
+}
+.error{
+color:yellow;
+font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>🩸 BloodHub</h1>
-        <p>Connecting Donors. Saving Lives.</p>
-        <button onclick="scrollToSearch()">Find Blood Now</button>
-    </header>
+<!-- ROLE PAGE -->
+<div id="rolePage" class="page">
+<h1>🩸 BloodHub</h1>
+<p class="subtitle">AI-Powered Emergency Blood Network</p>
 
-    <section class="features">
-        <h2>Why BloodHub?</h2>
-        <div class="feature-box">
-            <div>
-                <h3>⚡ Instant Search</h3>
-                <p>Find nearby blood donors in seconds.</p>
-            </div>
-            <div>
-                <h3>🚑 Emergency Mode</h3>
-                <p>Priority alert system for critical cases.</p>
-            </div>
-            <div>
-                <h3>🧠 Smart Risk Indicator</h3>
-                <p>Shows urgency level based on need.</p>
-            </div>
-        </div>
-    </section>
+<div class="counter">
+Total Registered Donors: <span id="donorCount">0</span>
+</div>
 
-    <section id="search-section">
-        <h2>Find a Donor</h2>
+<div class="role-buttons">
+<button class="role-btn donor-btn" onclick="openDonor()">I Am Donor</button>
+<button class="role-btn receiver-btn" onclick="openReceiver()">I Need Blood</button>
+</div>
+</div>
 
-        <select id="bloodGroup">
-            <option value="">Select Blood Group</option>
-            <option>A+</option>
-            <option>B+</option>
-            <option>O+</option>
-            <option>AB+</option>
-            <option>A-</option>
-            <option>B-</option>
-            <option>O-</option>
-            <option>AB-</option>
-        </select>
+<!-- DONOR PAGE -->
+<div id="donorPage" class="page">
+<h2>Become a Life Saver ❤️</h2>
 
-        <input type="text" id="location" placeholder="Enter Location">
+<input type="text" id="donorName" placeholder="Full Name"><br>
 
-        <select id="urgency">
-            <option value="Normal">Normal</option>
-            <option value="Critical">Critical</option>
-        </select>
+<select id="donorBlood">
+<option value="">Select Blood Group</option>
+<option>A+</option><option>B+</option><option>O+</option>
+<option>AB+</option><option>A-</option><option>B-</option>
+<option>O-</option><option>AB-</option>
+</select><br>
 
-        <button onclick="searchDonor()">Search</button>
+<input type="text" id="donorCity" placeholder="Enter City"><br>
 
-        <div id="riskLevel"></div>
-        <div id="results"></div>
-    </section>
+<button onclick="registerDonor()">Register</button>
 
-    <footer>
-        <p>Made with ❤️ at Tink Her Hackathon</p>
-    </footer>
+<h3 id="donorMessage"></h3>
 
-    <script src="script.js"></script>
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+</div>
+
+<!-- RECEIVER PAGE -->
+<div id="receiverPage" class="page">
+<h2>Find Nearby Donors 🩺</h2>
+
+<select id="searchBlood">
+<option value="">Select Blood Group</option>
+<option>A+</option><option>B+</option><option>O+</option>
+<option>AB+</option><option>A-</option><option>B-</option>
+<option>O-</option><option>AB-</option>
+</select><br>
+
+<input type="text" id="searchCity" placeholder="Enter City"><br>
+
+<select id="urgency">
+<option>Normal</option>
+<option>Critical</option>
+</select><br>
+
+<button onclick="searchDonor()">Search</button>
+
+<div id="donorResults"></div>
+
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+</div>
+
+<script>
+let donors = JSON.parse(localStorage.getItem("donors")) || [
+{name:"Arun",blood:"A+",city:"Chennai"},
+{name:"Priya",blood:"O+",city:"Chennai"}
+];
+
+updateCounter();
+
+function saveData(){
+localStorage.setItem("donors",JSON.stringify(donors));
+updateCounter();
+}
+
+function updateCounter(){
+document.getElementById("donorCount").innerText = donors.length;
+}
+
+/* PAGE SWITCH */
+function openDonor(){
+hideAll();
+document.getElementById("donorPage").style.display="block";
+}
+function openReceiver(){
+hideAll();
+document.getElementById("receiverPage").style.display="block";
+}
+function goBack(){
+hideAll();
+document.getElementById("rolePage").style.display="flex";
+}
+function hideAll(){
+document.getElementById("rolePage").style.display="none";
+document.getElementById("donorPage").style.display="none";
+document.getElementById("receiverPage").style.display="none";
+}
+
+/* REGISTER */
+function registerDonor(){
+let name=document.getElementById("donorName").value;
+let blood=document.getElementById("donorBlood").value;
+let city=document.getElementById("donorCity").value;
+let msg=document.getElementById("donorMessage");
+
+if(name==""||blood==""||city==""){
+msg.innerHTML="⚠ Please fill all fields";
+msg.className="error";
+return;
+}
+
+donors.push({name,blood,city});
+saveData();
+
+msg.innerHTML="✅ Successfully Registered as Donor!";
+msg.className="success";
+
+document.getElementById("donorName").value="";
+document.getElementById("donorCity").value="";
+}
+
+/* SEARCH */
+function searchDonor(){
+let blood=document.getElementById("searchBlood").value;
+let city=document.getElementById("searchCity").value.toLowerCase();
+let urgency=document.getElementById("urgency").value;
+let results=document.getElementById("donorResults");
+
+results.innerHTML="";
+
+let filtered=donors.filter(d=>d.blood==blood && d.city.toLowerCase()==city);
+
+if(filtered.length==0){
+results.innerHTML="<p>No donors found.</p>";
+return;
+}
+
+filtered.forEach(d=>{
+let cardClass="card";
+if(urgency=="Critical"){
+cardClass+=" critical";
+}
+results.innerHTML+=`
+<div class="${cardClass}">
+<h3>${d.name}</h3>
+<p>Blood Group: ${d.blood}</p>
+<p>City: ${d.city}</p>
+</div>
+`;
+});
+}
+</script>
+
 </body>
-</html>/3325
+</html>

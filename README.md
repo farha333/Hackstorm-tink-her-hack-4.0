@@ -1,28 +1,20 @@
 <p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
-</p>
-
-# [Project Name] 🎯
-
-## Basic Details
-
-### Team Name: [Name]
-
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+66am Members
+- Member 1: [Naurin farha A] - [Royal college of Engineering and Technology]
+- Member 2: [Rafeetha RV] - [Royal college of Engineering and Technology]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[A Blood donation website is a platform that connects Blood donors with patients and hospitals in real time.It allows users to register as donors,search for required blood groups nearby,and requests emergency support quickly.The goal is to save lives by making blood availability faster,easier and location based.]
 
 ### The Problem statement
-[What problem are you solving?]
+[In emergencies,finding the required blood group quickly is difficult and time consuming.There is no fast,location based system to connect nearby blood donors with patients in urgent need.]
 
 ### The Solution
-[How are you solving it?]
+[Develop a simple,location-based blood donation website that connects nearby donors with patients in real time .users can search by blood group ,view available donors and connect them quickly during emergencies ]6
 
 ---
 
@@ -31,25 +23,25 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [HTML,CSS,Javascript]
+- Frameworks used: [None]
+- Libraries used: [None/Basic Javascript]
+- Tools used: [VS Code,Web Browser,Git]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [Laptop/PC,Smartphone,Internet Router]
+- Specifications: [Minimum 4GB RAM,Modern Web Browser,Stable Internet Connection]
+- Tools required: [Keyboard,Mouse,Wi-fi Connection]
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Smart Donor Search - Quickly find donors by blood group and location]
+- Feature 2: [Location Based Matching - Connects patients with nearby donors for faster response]
+- Feature 3: [Emergency Alert System - sends instant notifications during urgent situations]
+- Feature 4: [Secure Registertion - Safe and easy donor profile management]
 
 ---
 
@@ -59,7 +51,7 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[clone the respository 8]
 ```
 
 #### Run
@@ -70,10 +62,12 @@ List the key features of your project:
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+[Development Device:Laptop/PC (minimum 4GB RAM,Dual-Core Processor)
+User Device:Smartphone/Laptop with Web Browser
+Internet Connection:Stable Wi-fi or Mobile Data]
 
 #### Circuit Setup
-[Explain how to set up the circuit]
+[Not Applicable-This project is a web-based application and does not require any physical circuit setup]
 
 ---
 
@@ -83,8 +77,8 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![c:\Users\aysha\OneDrive\Pictures\Screenshots\Screenshot (5).png6](Add screenshot 1 here with proper name)
+**
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
