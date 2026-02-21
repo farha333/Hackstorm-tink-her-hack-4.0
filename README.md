@@ -1,20 +1,28 @@
 <p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
-66am Members
-- Member 1: [Naurin farha A] - [Royal college of Engineering and Technology]
-- Member 2: [Rafeetha RV] - [Royal college of Engineering and Technology]
+</p>
+
+# [Project Name] 🎯
+
+## Basic Details
+
+### Team Name: [Hackstorm]
+
+### Team Members
+- Member 1: [Naurin farha A] - [Royal College Of Engineering And Technology]
+- Member 2: [Rafeetha R.V*] - [Royal College Of Engineering And Technology]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[A Blood donation website is a platform that connects Blood donors with patients and hospitals in real time.It allows users to register as donors,search for required blood groups nearby,and requests emergency support quickly.The goal is to save lives by making blood availability faster,easier and location based.]
+[2-3 lines about what your project does]
 
 ### The Problem statement
-[In emergencies,finding the required blood group quickly is difficult and time consuming.There is no fast,location based system to connect nearby blood donors with patients in urgent need.]
+[What problem are you solving?]
 
 ### The Solution
-[Develop a simple,location-based blood donation website that connects nearby donors with patients in real time .users can search by blood group ,view available donors and connect them quickly during emergencies ]6
+[How are you solving it?]
 
 ---
 
@@ -23,25 +31,25 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [HTML,CSS,Javascript]
-- Frameworks used: [None]
-- Libraries used: [None/Basic Javascript]
-- Tools used: [VS Code,Web Browser,Git]
+- Languages used: [e.g., JavaScript, Python, Java]
+- Frameworks used: [e.g., React, Django, Spring Boot]
+- Libraries used: [e.g., axios, pandas, JUnit]
+- Tools used: [e.g., VS Code, Git, Docker]
 
 **For Hardware:**
-- Main components: [Laptop/PC,Smartphone,Internet Router]
-- Specifications: [Minimum 4GB RAM,Modern Web Browser,Stable Internet Connection]
-- Tools required: [Keyboard,Mouse,Wi-fi Connection]
+- Main components: [List main components]
+- Specifications: [Technical specifications]
+- Tools required: [List tools needed]
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Smart Donor Search - Quickly find donors by blood group and location]
-- Feature 2: [Location Based Matching - Connects patients with nearby donors for faster response]
-- Feature 3: [Emergency Alert System - sends instant notifications during urgent situations]
-- Feature 4: [Secure Registertion - Safe and easy donor profile management]
+- Feature 1: [Description]
+- Feature 2: [Description]
+- Feature 3: [Description]
+- Feature 4: [Description]
 
 ---
 
@@ -51,7 +59,7 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[clone the respository 8]
+[Installation commands - e.g., npm install, pip install -r requirements.txt]
 ```
 
 #### Run
@@ -62,12 +70,10 @@ List the key features of your project:
 ### For Hardware:
 
 #### Components Required
-[Development Device:Laptop/PC (minimum 4GB RAM,Dual-Core Processor)
-User Device:Smartphone/Laptop with Web Browser
-Internet Connection:Stable Wi-fi or Mobile Data]
+[List all components needed with specifications]
 
 #### Circuit Setup
-[Not Applicable-This project is a web-based application and does not require any physical circuit setup]
+[Explain how to set up the circuit]
 
 ---
 
@@ -77,14 +83,14 @@ Internet Connection:Stable Wi-fi or Mobile Data]
 
 #### Screenshots (Add at least 3)
 
-![c:\Users\aysha\OneDrive\Pictures\Screenshots\Screenshot (5).png6](Add screenshot 1 here with proper name)
-*This page allows users to register as donors,search for blood by city,and send emergency requests through a simple and user-friendly interface*
+![Screenshot1](Add screenshot 1 here with proper name)
+*Add caption explaining what this shows*
 
-![c:\Users\aysha\OneDrive\Pictures\Screenshots\Screenshot (5).png](Add screenshot 2 here with proper name)
-*The Donor Registeration page allows users to enter their personal details such as name,age,blood group,city,and health condition to register as blood donor.This form ensures accurate donor information for quick and efficient emergency blood matching*
+![Screenshot2](Add screenshot 2 here with proper name)
+*Add caption explaining what this shows*
 
-![c:\Users\aysha\OneDrive\Pictures\Screenshots\Screenshot (5).png](Add screenshot 3 here with proper name)
-*The Smart Match Donor page allows users to select a required blood group and instantly find matching registered donors.The system displays donor details such as name,blood group,city,and age to ensure quick and efficient emergency blood support*
+![Screenshot3](Add screenshot 3 here with proper name)
+*Add caption explaining what this shows*
 
 #### Diagrams
 
@@ -112,7 +118,7 @@ Internet Connection:Stable Wi-fi or Mobile Data]
 
 #### Build Photos
 
-![Team](c:\Users\aysha\Downloads\WhatsApp Image 2026-02-21 at 6.36.13 AM.jpeg6)
+![Team](Add photo of your team here)
 
 ![Components](Add photo of your components here)
 *List out all components shown*

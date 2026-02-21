@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blood Hub - Smart Life Saver</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#8B0000,#ff4d4d);
+color:white;
+text-align:center;
+}
+
+.page{
+display:none;
+padding:30px;
+}
+
+.active{
+display:block;
+}
+
+h1{
+font-size:42px;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+background:white;
+color:#8B0000;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ffe6e6;
+}
+
+input,select{
+padding:10px;
+margin:8px;
+border-radius:8px;
+border:none;
+width:250px;
+}
+
+.card{
+background:white;
+color:black;
+margin:15px auto;
+padding:15px;
+width:80%;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.profile-box{
+background:white;
+color:black;
+width:350px;
+margin:20px auto;
+padding:20px;
+border-radius:15px;
+}
+
+.counter{
+font-size:20px;
+color:red;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+<h1>🩸 BLOOD HUB</h1>
+<p>Smart Emergency Blood Matching System</p>
+
+<button onclick="showPage('donorPage')">🧑 Become Donor</button>
+<button onclick="showPage('receiverPage')">🚨 I Am Receiver</button>
+</div>
+
+<!-- DONOR PAGE -->
+<div id="donorPage" class="page">
+<h2>🩸 Register as Donor</h2>
+
+<input id="name" placeholder="Full Name"><br>
+<input id="age" type="number" placeholder="Age"><br>
+
+<select id="blood">
+<option>Select Blood Group</option>
+<option>A+</option><option>A-</option>
+<option>B+</option><option>B-</option>
+<option>O+</option><option>O-</option>
+<option>AB+</option><option>AB-</option>
+</select><br>
+
+<input id="city" placeholder="City"><br>
+<input id="health" placeholder="Health Condition"><br>
+
+<button onclick="saveDonor()">Register</button>
+<button onclick="showPage('home')">Back</button>
+</div>
+
+<!-- RECEIVER PAGE -->
+<div id="receiverPage" class="page">
+<h2>🧠 Smart Match Donor</h2>
+
+<select id="requiredBlood">
+<option>Select Required Blood Group</option>
+<option>A+</option><option>A-</option>
+<option>B+</option><option>B-</option>
+<option>O+</option><option>O-</option>
+<option>AB+</option><option>AB-</option>
+</select>
+
+<button onclick="matchDonors()">Find Match</button>
+
+<div id="results"></div>
+
+<button onclick="showPage('home')">Back</button>
+</div>
+
+<!-- DONOR PROFILE PAGE -->
+<div id="profilePage" class="page">
+<h2>🩸 Donor Profile</h2>
+<div id="profileBox" class="profile-box"></div>
+<button onclick="showPage('receiverPage')">Back</button>
+</div>
+
+<!-- EMERGENCY PAGE -->
+<div id="emergencyPage" class="page">
+<h2>🚑 Emergency Activated</h2>
+<div class="profile-box">
+<p id="emergencyInfo"></p>
+<p class="counter">Arrival in: <span id="time">10</span> mins</p>
+<button onclick="finish()">Finish</button>
+</div>
+</div>
+
+<script>
+function showPage(pageId){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(pageId).classList.add('active');
+}
+
+// LocalStorage Donors
+let donors=JSON.parse(localStorage.getItem("donors"))||[];
+
+// Preload 50 donors
+if(donors.length<50){
+const names=["Arjun","Rahul","Priya","Meena","Karthik","Divya","Vikram","Sneha","Ajay","Nisha"];
+const cities=["Chennai","Madurai","Salem","Trichy","Coimbatore"];
+const groups=["A+","A-","B+","B-","O+","O-","AB+","AB-"];
+const health=["Fit","Healthy","Excellent","Active"];
+
+for(let i=1;i<=50;i++){
+donors.push({
+name:names[Math.floor(Math.random()*names.length)]+" "+i,
+age:18+Math.floor(Math.random()*40),
+blood:groups[Math.floor(Math.random()*groups.length)],
+city:cities[Math.floor(Math.random()*cities.length)],
+health:health[Math.floor(Math.random()*health.length)],
+available:true
+});
+}
+localStorage.setItem("donors",JSON.stringify(donors));
+}
+
+function saveDonor(){
+let donor={
+name:name.value,
+age:age.value,
+blood:blood.value,
+city:city.value,
+health:health.value,
+available:true
+};
+donors.push(donor);
+localStorage.setItem("donors",JSON.stringify(donors));
+alert("✅ Donor Registered Successfully!");
+showPage('home');
+}
+
+function matchDonors(){
+let required=document.getElementById("requiredBlood").value;
+let results=document.getElementById("results");
+results.innerHTML="";
+
+let matched=donors.filter(d=>d.blood===required);
+
+if(matched.length===0){
+results.innerHTML="<h3>No Exact Match Found</h3>";
+return;
+}
+
+matched.forEach(d=>{
+let div=document.createElement("div");
+div.className="card";
+div.innerHTML=`<h3>${d.name} (${d.blood})</h3>
+<p>City: ${d.city} | Age: ${d.age}</p>`;
+div.onclick=function(){
+showProfile(d);
+};
+results.appendChild(div);
+});
+}
+
+function showProfile(donor){
+let box=document.getElementById("profileBox");
+box.innerHTML=`
+<h3>${donor.name}</h3>
+<p><b>Age:</b> ${donor.age}</p>
+<p><b>Blood:</b> ${donor.blood}</p>
+<p><b>City:</b> ${donor.city}</p>
+<p><b>Health:</b> ${donor.health}</p>
+
+<select id="service">
+<option>Select Service</option>
+<option>🚑 Ambulance</option>
+<option>🛵 Blood Hub Rapid Bike</option>
+</select><br>
+<button onclick="activateEmergency('${donor.name}','${donor.city}')">Request Service</button>
+`;
+showPage('profilePage');
+}
+
+function activateEmergency(name,city){
+let service=document.getElementById("service").value;
+if(service==="Select Service"){
+alert("Please select a service!");
+return;
+}
+document.getElementById("emergencyInfo").innerHTML=
+`Service: <b>${service}</b><br>Donor: <b>${name}</b><br>City: ${city}`;
+
+showPage('emergencyPage');
+
+let t=10;
+let interval=setInterval(()=>{
+if(t>0){
+t--;
+document.getElementById("time").innerText=t;
+}else{
+clearInterval(interval);
+}
+},1000);
+}
+
+function finish(){
+alert("✅ Emergency Successfully Managed!");
+showPage('home');
+}
+</script>
+
+</body>
+</html>

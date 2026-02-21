@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Hub - Donors</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ff4d4d, #ff9999);
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        header {
+            background-color: #990000;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #cc0000;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        select, input {
+            padding: 8px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background-color: #cc0000;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+
+<header>🩸 Blood Hub - Available Donors</header>
+
+<div class="container">
+
+    <input type="text" id="locationFilter" placeholder="Search by Location">
+    
+    <select id="bloodFilter">
+        <option value="">All Blood Groups</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+    </select>
+
+    <button onclick="filterDonors()">Search</button>
+
+    <table id="donorTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>Location</th>
+            <th>Health Condition</th>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+const names = ["Arjun", "Rahul", "Priya", "Meena", "Karthik", "Divya", "Vikram", "Sneha", "Ajay", "Nisha"];
+const locations = ["Chennai", "Coimbatore", "Madurai", "Salem", "Trichy"];
+const bloodGroups = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
+const health = ["Fit", "Excellent", "Healthy", "Active"];
+
+const table = document.getElementById("donorTable");
+
+for(let i=1; i<=50; i++){
+    let row = table.insertRow();
+    row.insertCell(0).innerText = names[Math.floor(Math.random()*names.length)] + " " + i;
+    row.insertCell(1).innerText = 18 + Math.floor(Math.random()*40);
+    row.insertCell(2).innerText = bloodGroups[Math.floor(Math.random()*bloodGroups.length)];
+    row.insertCell(3).innerText = locations[Math.floor(Math.random()*locations.length)];
+    row.insertCell(4).innerText = health[Math.floor(Math.random()*health.length)];
+}
+
+function filterDonors(){
+    let blood = document.getElementById("bloodFilter").value.toUpperCase();
+    let location = document.getElementById("locationFilter").value.toUpperCase();
+    let rows = table.getElementsByTagName("tr");
+
+    for(let i=1; i<rows.length; i++){
+        let bg = rows[i].cells[2].innerText.toUpperCase();
+        let loc = rows[i].cells[3].innerText.toUpperCase();
+
+        if((blood==="" || bg===blood) &&
+           (location==="" || loc.includes(location))){
+            rows[i].style.display="";
+        } else {
+            rows[i].style.display="none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>0
