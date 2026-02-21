@@ -6,7 +6,7 @@
 
 ## Basic Details
 
-### Team Name: [Hackstorm]
+### Team Name: Hackstorm
 
 ### Team Members
 - Member 1: [Naurin farha A] - [Royal College Of Engineering And Technology]
